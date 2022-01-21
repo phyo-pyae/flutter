@@ -314,7 +314,7 @@ class _AccountPageState extends State<AccountPage> {
                         AsyncSnapshot<List<Map<String, dynamic>>> snapshot) {
                       if (snapshot.connectionState == ConnectionState.done) {
                         return ListView.builder(
-                          itemCount: snapshot.data?.length ?? 0,
+                          itemCount: snapshot.data.length ?? 0,
                           itemBuilder: (context, index) {
                             final Map<String, dynamic> image =
                                 snapshot.data[index];
