@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "881874014828",
+    "project_id": "phyo-pyae-wa-logistics",
+    "storage_bucket": "phyo-pyae-wa-logistics.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:881874014828:android:d81d0d3c11cc66d2ba3e49",
+        "android_client_info": {
+          "package_name": "com.example.phyopyaewa_logistics"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "881874014828-vk8qechle9ckjkvjgj70k19qp7oh5v4j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.phyopyaewa_logistics",
+            "certificate_hash": "92ba4f70bc206f16c1beffedf87e05c5cffbba3e"
+          }
+        },
+        {
+          "client_id": "881874014828-12f0vbncj364e562nf3loo1ukkjo9kel.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiOWiVpJhi9mhPkxpnT-wgioiUBZ2Ll7o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "881874014828-12f0vbncj364e562nf3loo1ukkjo9kel.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

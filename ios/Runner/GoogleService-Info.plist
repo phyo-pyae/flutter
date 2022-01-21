@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>881874014828-rvnplcpi264vl4160ptgqlp6eccela2o.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.881874014828-rvnplcpi264vl4160ptgqlp6eccela2o</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>881874014828-vk8qechle9ckjkvjgj70k19qp7oh5v4j.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCjtByhNjQi1lFOKMKfd8tdBJmUn3adh6o</string>
+	<key>GCM_SENDER_ID</key>
+	<string>881874014828</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.phyopyaewaLogistics</string>
+	<key>PROJECT_ID</key>
+	<string>phyo-pyae-wa-logistics</string>
+	<key>STORAGE_BUCKET</key>
+	<string>phyo-pyae-wa-logistics.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:881874014828:ios:711caa74c87fcbbcba3e49</string>
+</dict>
+</plist>
