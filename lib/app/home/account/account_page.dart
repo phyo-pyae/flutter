@@ -120,21 +120,15 @@ class _AccountPageState extends State<AccountPage> {
 
   // Retriew the uploaded images
   // This function is called when the app launches for the first time or when an image is uploaded or deleted
-  Future<List<Map<String, dynamic>>> _loadImages(BuildContext context) async {
+  Future<List<Map<String, dynamic>>> _loadImages() async {
     List<Map<String, dynamic>> files = [];
 
-    final auth = Provider.of<AuthBase>(context, listen: false);
-    final String currentUser = auth.currentUser.uid;
-
-    final ListResult result = await storage.ref('users/${currentUser}').list();
-
+    final ListResult result = await storage.ref().list();
     final List<Reference> allFiles = result.items;
 
     await Future.forEach<Reference>(allFiles, (file) async {
       final String fileUrl = await file.getDownloadURL();
-
       final FullMetadata fileMeta = await file.getMetadata();
-
       files.add({
         "url": fileUrl,
         "path": file.fullPath,
@@ -307,16 +301,14 @@ class _AccountPageState extends State<AccountPage> {
                           },
                         ),
                       ),
-                //test
-                //second
                 Expanded(
                   child: FutureBuilder(
-                    future: _loadImages(context),
+                    future: _loadImages(),
                     builder: (context,
                         AsyncSnapshot<List<Map<String, dynamic>>> snapshot) {
                       if (snapshot.connectionState == ConnectionState.done) {
                         return ListView.builder(
-                          itemCount: snapshot.data.length ?? 0,
+                          itemCount: snapshot.data?.length ?? 0,
                           itemBuilder: (context, index) {
                             final Map<String, dynamic> image =
                                 snapshot.data[index];
