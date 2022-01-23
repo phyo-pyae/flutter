@@ -61,11 +61,7 @@ class _HomePageState extends State<HomePage> {
 
       TabItem.jobs: (_) => JobsPage(),
       TabItem.entries: (_) => EntriesPage.create(context),
-      TabItem.account: (_) => Provider<FirestoreServiceImage>(
-            create: (_) => FirestoreServiceImage(uid: auth.currentUser.uid),
-            child: AccountPage(),
-          ),
-      //TabItem.account: (_) => AccountPage(),
+      TabItem.account: (_) => AccountPage(),
     };
   }
 
