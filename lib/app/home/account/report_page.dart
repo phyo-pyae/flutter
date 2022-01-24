@@ -263,7 +263,7 @@ class _ReportPageState extends State<ReportPage> {
       _selectedFiles.clear();
     }
     try {
-      final List<XFile> imgs = await _picker.pickMultiImage();
+      final List<XFile> imgs = await _picker.pickMultiImage(imageQuality: 88);
       if (imgs.isNotEmpty) {
         print(imgs.length);
         _selectedFiles.addAll(imgs);
