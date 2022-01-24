@@ -1,8 +1,8 @@
 # Flutter Example Application 
 
 TODO app 
-### Can create list of job to do for each user and storing it to Firestore Cloud
-### Can upload images of memories for each user and storing it to Firebase Storage
+#### Can create list of job to do for each user and storing it to Firestore Cloud
+#### Can upload images of memories for each user and storing it to Firebase Storage
 
 ## Getting Started
 
