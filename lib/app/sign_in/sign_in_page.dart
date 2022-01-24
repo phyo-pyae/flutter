@@ -48,6 +48,31 @@ class SignInPage extends StatelessWidget {
     );
   }
 
+  Future<void> _signInAnonymously(BuildContext context) async {
+    try {
+      await manager.signInAnonymously();
+    } catch (e) {
+      print(e.toString());
+    }
+  }
+
+  Future<void> _signInWithGoogle(BuildContext context) async {
+    try {
+      await manager.signInWithGoogle();
+    } on Exception catch (e) {
+      _showSignInError(context, e);
+    }
+  }
+
+  Future<void> _signInWithFacebook(BuildContext context) async {
+    try {
+      await manager.signInWithFacebook();
+    } on Exception catch (e) {
+      _showSignInError(context, e);
+      _showSignInError(context, e);
+    }
+  }
+
   void _signInWithEmail(BuildContext context) {
     Navigator.of(context).push(
       MaterialPageRoute<void>(
@@ -64,10 +89,10 @@ class SignInPage extends StatelessWidget {
     // so that the SignInPage rebuilds when the value changes
 
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text('Phyo Pyae Wa'),
-      //   elevation: 2.0,
-      // ),
+      appBar: AppBar(
+        title: Text('Time Tracker'),
+        elevation: 2.0,
+      ),
       body: _buildContent(context),
       backgroundColor: Colors.grey[200],
     );
@@ -84,14 +109,41 @@ class SignInPage extends StatelessWidget {
             height: 50,
             child: _buildHeader(),
           ),
-          SizedBox(
-            height: 40,
+          SizedBox(height: 48.0),
+          SocialSignInButton(
+            assetName: 'images/google-logo.png',
+            text: 'Sign in with Google',
+            textColor: Colors.black87,
+            color: Colors.white,
+            onPressed: isLoading ? null : () => _signInWithGoogle(context),
           ),
-          SignInButton(
-            text: 'Log in',
+          SizedBox(height: 8.0),
+          SocialSignInButton(
+            assetName: 'images/facebook-logo.png',
+            text: 'Sign in with Facebook',
             textColor: Colors.white,
-            color: Colors.indigo[500],
+            color: Color(0xFF334D92),
+            onPressed: isLoading ? null : () => _signInWithFacebook(context),
+          ),
+          SizedBox(height: 8.0),
+          SignInButton(
+            text: 'Sign in with email',
+            textColor: Colors.white,
+            color: Colors.teal[700],
             onPressed: isLoading ? null : () => _signInWithEmail(context),
+          ),
+          SizedBox(height: 8.0),
+          Text(
+            'or',
+            style: TextStyle(fontSize: 14.0, color: Colors.black87),
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(height: 8.0),
+          SignInButton(
+            text: 'Go anonymous',
+            textColor: Colors.black,
+            color: Colors.lime[300],
+            onPressed: isLoading ? null : () => _signInAnonymously(context),
           ),
         ],
       ),
@@ -105,10 +157,9 @@ class SignInPage extends StatelessWidget {
       );
     }
     return Text(
-      'Phyo Pyae Wa',
+      'Sign in',
       textAlign: TextAlign.center,
       style: TextStyle(
-        color: Colors.indigo[800],
         fontSize: 32.0,
         fontWeight: FontWeight.w600,
       ),
